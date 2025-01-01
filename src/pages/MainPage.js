@@ -10,7 +10,7 @@ function MainPage() {
             <h1>Благодійний фонд</h1>
             </header>
             <nav>
-                <Link to="/create-request">Створити запит</Link>
+                <Link to="/request">Створити запит</Link>
                 <Link to="/login">Увійти</Link> |{" "}
             </nav>
             <div className="main-content">
