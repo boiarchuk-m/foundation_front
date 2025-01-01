@@ -1,16 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/MainPage.css";
 
 function MainPage() {
     return (
         <div>
-            <h1>Welcome to the Foundation App</h1>
+            <header>
+
+            <h1>Благодійний фонд</h1>
+            </header>
             <nav>
-                <Link to="/register">Register/Login</Link> |{" "}
-                <Link to="/create-request">Create Request</Link> |{" "}
-                <Link to="/cabinet">Personal Cabinet</Link> |{" "}
-                <Link to="/manager">Manager Dashboard</Link>
+                <Link to="/create-request">Створити запит</Link>
+                <Link to="/login">Увійти</Link> |{" "}
             </nav>
+            <div className="main-content">
+                <h1>Благодійний фонд "Український щит"</h1>
+                <h2>Разом до перемоги!</h2>
+                <p>Текст: Ми – одна велика родина. Підтримаймо один одного! 
+                    Відкрий запит на допомогу, замов окопні свічки, стань волонтером 
+                    або зроби донат. Кожна твоя дія наближає нашу перемогу.</p>
+            </div>
         </div>
     );
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 
-const RegisterLoginPage = () => {
+const RegisterPage = () => {
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -29,7 +29,7 @@ const RegisterLoginPage = () => {
     };
 
     return (
-        <div>
+        <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px' }}>
             <h1>Register</h1>
             {success && <p style={{ color: 'green' }}>{success}</p>}
             {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -64,4 +64,4 @@ const RegisterLoginPage = () => {
     );
 };
 
-export default RegisterLoginPage;
+export default RegisterPage;
