@@ -1,12 +1,24 @@
 import axios from 'axios';
+import { ACCESS_TOKEN } from './constants';
 
-const API_BASE_URL = 'http://localhost:8000/app';
+const api =axios.create({
+  baseURL:"http://localhost:8000",
+  headers: {
+    "Content-Type": "application/json",
+},
+})
 
-export const getRequests = () => axios.get(`${API_BASE_URL}/requests/`);
-export const createRequest = (data) => axios.post(`${API_BASE_URL}/requests/`, data);
-export const editRequest = (id, data) =>
-  axios.patch(`${API_BASE_URL}/requests/${id}/`, data);
-export const deleteRequest = (id) =>
-  axios.delete(`${API_BASE_URL}/requests/${id}/`);
-export const manageRequest = (id, data) =>
-  axios.patch(`${API_BASE_URL}/requests/${id}/manage_request/`, data);
+api.interceptors.request.use(
+  (config) =>{
+    const token = localStorage.getItem('access');
+    if(token){
+      config.headers.Authorization = `Bearer ${token}`
+    }
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+  )
+
+export default api

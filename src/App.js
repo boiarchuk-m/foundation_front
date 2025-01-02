@@ -1,14 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MainPage from './pages/MainPage';  // Import the Main/Home Page component
+import { Navigate } from 'react-router-dom';
+import MainPage from './pages/MainPage'; 
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
-import PersonalCabinetPage from './pages/PersonalCabinetPage';
-import ManagerPage from './pages/ManagerPage';
-import CreateRequestPage from './pages/CreateRequestPage';
+import Home from "./pages/Home";
+import CreateNote from './pages/create';
+
+function Logout() {
+  localStorage.clear()
+  return <Navigate to='/login/'/>
+}
+
+function RegisterAndLogout() {
+  localStorage.clear()
+  return <RegisterPage/>
+}
 
 const App = () => {
   return (
@@ -20,9 +28,8 @@ const App = () => {
         {/* Other pages */}
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage/>}/>
-        <Route path="/cabinet" element={<PersonalCabinetPage/>}/> 
-        <Route path="/manager" element={<ManagerPage/>}/>
-        <Route path="/request" element={<CreateRequestPage />} />
+        <Route path="/note" element={<CreateNote/>}/>
+        <Route path="/home" element={<Home/>}/>
       </Routes>
     </Router>
   );

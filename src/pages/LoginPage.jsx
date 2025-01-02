@@ -29,12 +29,12 @@ const LoginPage = () => {
             localStorage.setItem('access', access);
             localStorage.setItem('refresh', refresh);
 
-            // Display a success message or redirect based on user role
-            if (user.role === 'manager') {
-                navigate('/manager-dashboard'); // Example manager dashboard
-            } else {
-                navigate('/user-dashboard'); // Example user dashboard
-            }
+           // if (user.role === 'manager') {
+            //    navigate('/manager-dashboard'); 
+           // } else {
+           //     navigate('/user-dashboard'); 
+            navigate('/');
+            
         } catch (err) {
             setError('Invalid username or password.');
         }
