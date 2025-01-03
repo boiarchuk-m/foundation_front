@@ -7,6 +7,7 @@ import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import Home from "./pages/Home";
 import CreateNote from './pages/create';
+import UpdateRequest from './pages/UpdatePage';
 
 function Logout() {
   localStorage.clear()
@@ -30,9 +31,11 @@ const App = () => {
         <Route path="/login" element={<LoginPage/>}/>
         <Route path="/note" element={<CreateNote/>}/>
         <Route path="/home" element={<Home/>}/>
+        <Route path="/update/:id" element={<UpdateRequest/>}/>
       </Routes>
     </Router>
   );
 };
 
 export default App;
+

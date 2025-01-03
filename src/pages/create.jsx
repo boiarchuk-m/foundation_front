@@ -27,7 +27,7 @@ function CreateRequest() {
 
     return (
         <div>
-            <h2>Створення запиту</h2>
+            <h1>Створення запиту</h1>
             <form onSubmit={createReqest}>
                 <label htmlFor="full_name">ПІБ:</label>
                 <br />

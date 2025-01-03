@@ -48,14 +48,16 @@ function Home() {
             <nav>
                 <Link to="/login">Увійти</Link> |{" "}
                 <Link to="/note">Створити запит</Link> |{" "}
+                <Link to="/">Головна сторінка</Link> |{" "}
             </nav>
-          <h2>Запити</h2>
+          <h1>Запити</h1>
           <ul>
             {requests.map((request) => (
               <li key={request.id}>
                 <h3>{request.request_text}</h3>
-                <p>{request.status}</p>
+                <p class='status'>{request.status}</p>
                 <button onClick={() => deleteRequest(request.id)}>Delete</button>
+                <Link className='update' to={`/update/${request.id}`}>Update</Link>
               </li>
             ))}
           </ul>
